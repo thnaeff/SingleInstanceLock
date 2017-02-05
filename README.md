@@ -17,6 +17,28 @@ Prevent your application from starting more than once on the same machine
 
 
 
+##Example
+
+```Java
+
+	SingleInstanceLock.setApplicationId("some_unique_application_id");
+
+    boolean locked = SingleInstanceLock.lock();
+    
+    if (locked) {
+    	//Lock acquired
+    } else {
+    	//Other application instance has lock
+    }
+    
+    //...
+
+    SingleInstanceLock.release();
+    
+```
+
+
+
 ---
 
 
